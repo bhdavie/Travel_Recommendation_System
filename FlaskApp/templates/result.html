@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename='style.css')}}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- <div style="text-align:center">
+  <h1>The Results Are In:</h1>
+  <p>Here's some inspiration...</p> 
+</div>
+
+<div style="text-align:center">
+
+   {% for item in result %}
+   		<li>{{item}}</li>
+   {% endfor %}
+
+</div> -->
+
+
+<div class="background">
+  <div class="container">
+    <div class="panel pricing-table">
+      
+      {% for item in result%}
+      <div class="pricing-plan">
+        <img src={{ item[2] }} alt="" class="pricing-img">
+        <h2 class="pricing-header">{{item[0]}}</h2>
+        <a href= {{ item[1] }} class="pricing-button">Learn More</a>
+      </div>
+
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
